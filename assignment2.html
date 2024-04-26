@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "https://restcountries.com/v3.1/all");
+      xhttp.send();
+
+      xhttp.onload = function () {
+        if (xhttp.status === 200) {
+          var responseData = JSON.parse(xhttp.responseText);
+          for (i = 0; i < responseData.length; i++) {
+            console.log("flag is: " + responseData[i].flag);
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
